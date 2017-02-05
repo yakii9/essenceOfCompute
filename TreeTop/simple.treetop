@@ -39,6 +39,28 @@ grammar Simple
         Multiply.new(left.to_ast, right.to_ast)
       end
     }
+    /
+    term
+  end
+
+  rule term
+    number / variable
+  end
+
+  rule num
+    [0-9]+ {
+      def to_ast
+        Num.new(text_value.to_i)
+      end
+    }
+  end
+
+  rule variable
+  [a-z]+ {
+    def to_ast
+      Variable.new(text_value.to_sym)
+    end
+  }
   end
 
 end
