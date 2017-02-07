@@ -44,7 +44,7 @@ grammar Simple
   end
 
   rule term
-    number / variable
+    num / variable
   end
 
   rule num
