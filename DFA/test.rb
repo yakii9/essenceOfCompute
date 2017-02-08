@@ -9,7 +9,7 @@ rules = [
 
 book = RuleBook.new(rules)
 
-machine = Machine.new(1, [3], book)
+machine = Machine.new(1, [1, 2, 3], book)
 puts machine.accepting?
-machine.read_string('ab')
+machine.read_string('abc')
 puts machine.accepting?

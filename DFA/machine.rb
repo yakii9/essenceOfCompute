@@ -1,6 +1,6 @@
 class Machine < Struct.new(:current_state, :accept_states, :rulebook)
   def accepting?
-    accept_states.include?(current_state)
+    accept_states.include?(self.current_state)
   end
 
   def read(character)
